@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/datepicker.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+
+    <body>
+      <div class="inner-layer">
+          <div class="container">
+            <div class="row no-margin">
+                <div class="col-sm-7">
+                    <div class="content">
+                        <h1>Book Your Slot Now and Save your time.</h1>
+                    </div>
+                  </div>
+                <div class="col-sm-5">
+                    <div class="form-data">
+                        <div class="form-head">
+                            <h2>Book Appointemnt</h2> 
+                        </div>
+                        <div class="form-body" >
+                            <div class="row form-row">
+                               <form name="submit-to-google-sheet"> 
+                              <input type="text" name="Name" placeholder="Enter Full name" class="form-control">
+                            </div>
+                             <div class="row form-row">
+                              <input type="text" name="Mobile No." placeholder="Enter Mobile Number" class="form-control">
+                            </div>
+                             <div class="row form-row">
+                              <input type="text" name="Email" placeholder="Enter Email Adreess" class="form-control">
+                            </div>
+                           <div class="row form-row">
+                              <input id="dat" type="text" name="Appointemnt Date" placeholder="Appointment Date" class="form-control">
+                            </div>
+                            <div class="text">
+                            <h6>Address Details</h6></div> 
+
+                             <div class="row form-row"> 
+                                 <div class="col-sm-6">
+                                   <input type="text" name="Area" placeholder="Enter Area" class="form-control">
+                                </div>
+                                <div class="col-sm-6">
+                                   <input type="text" name="City" placeholder="Enter City" class="form-control">
+                                </div>
+                            </div>
+                             <div class="row form-row">
+                                <div class="col-sm-6">
+                                   <input type="text" name="State" placeholder="Enter State" class="form-control">
+                                </div>
+                                <div class="col-sm-6">
+                                   <input type="text" name="Postal code" placeholder="Postal Code" class="form-control">
+                                   
+                                  </div>
+                            </div>
+ 
+                             <div class="row form-row">
+                              
+                              <a href="C:\Users\Rohini\userauth\Barber\brber-master\sudha.html"> <button class="btn btn-success btn-appointment">
+                                 Book Appointment
+                                 </a>
+                               </button>
+                               <div class="btn">
+                               <a href="C:\Users\Rohini\userauth\Barber\brber-master\index.html"><button type="button" class="btn btn-danger">Delete</button></div></a>
+                               <style>
+                                .btn button{
+                                  position: relative;
+                                  left:400px;
+                                  bottom:45px;
+                                  
+            
+                                }
+                               </style>
+                              </form> 
+                               </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzik4QWeEuJ-1IT4yCnP1HOhXXKUkSANQOSr1V2aQxgJFGfuJG83VZ6KzVJG-Y_DFq8/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+    </body>
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-datepicker.js"></script>
+
+    <script>
+      $(document).ready(function(){
+          $("#dat").datepicker();
+      })
+    </script>
+    
+  </body>
+</html>
